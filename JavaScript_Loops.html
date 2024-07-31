@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" href></script>
+    <style>
+        body
+        {
+            background-color: rgb(69, 69, 69);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        #output
+        {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            background-color: rgb(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+    <script type="text/javascript">
+        const output = document.getElementById("output");
+        const quiz = [
+            {
+                question: "What is the capital of France?",
+                options: ["Paris", "London", "Berlin", "Madrid"],
+                answer: 0
+            },
+            {
+                question: "What is the capital of Germany?",
+                options: ["Paris", "London", "Berlin", "Madrid"],
+                answer: 2
+            },
+            {
+                question: "What is the capital of Spain?",
+                options: ["Paris", "London", "Berlin", "Madrid"],
+                answer: 3
+            },
+            {
+                question: "What is the capital of England?",
+                options: ["Paris", "London", "Berlin", "Madrid"],
+                answer: 1
+            }
+        ];
+        let score = 0;
+        for(let i = 0; i < quiz.length; i++)
+        {
+            const response = parseInt(prompt(quiz[i].question + "\n" + quiz[i].options));
+            if(response === quiz[i].answer)
+            {
+                score++;
+            }
+        }
+        output.innerHTML = "You scored " + score + "/" + quiz.length;
+    </script>
+</body>
+</html>

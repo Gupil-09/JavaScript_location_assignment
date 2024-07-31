@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color: rgb(69, 69, 69);
+            color: white;
+            font-family: Arial, sans-serif;
+            height: auto;
+            width: auto;
+        }
+        Button
+        {
+            margin: 10px;
+            margin-top: 400px;
+            margin-left: 900px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="button1">Button</button>
+        <div id="error-message" class="error"></div>
+    </div>
+    <script>
+        document.getElementById('button1').addEventListener('click', handleButtonClick);
+
+        function handleButtonClick() {
+            let location = prompt("Please enter your location:");
+            if (location) {
+                location = location.trim().toLowerCase();
+                if (location === "chandigarh" || location === "punjab" || location === "haryana") {
+                    showErrorMessage("Access Granted");
+                    sayHello(); 
+                } else {
+                    showErrorMessage("");
+                    alert("Error: Access denied for Chandigarh, Punjab, and Haryana.");
+                }
+            }
+        }
+
+        function sayHello() {
+            window.location.href = 'JavaScript_Loops.html';
+        }
+
+        function showErrorMessage(message) {
+            document.getElementById('error-message').textContent = message;
+        }
+    </script>
+</body>
+</html>
